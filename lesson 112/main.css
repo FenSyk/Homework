@@ -8,18 +8,18 @@
 .btn-open {
     width: 300px;
     height: 50px;
-    font-size: 20px; /* Исправлено: font-style на font-size */
+    font-size: 20px; 
     cursor: pointer;
     border-radius: 20px;
     
-    /* Новые стили для центрирования */
+  
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute; /* Используем абсолютное позиционирование */
-    top: 50%; /* Ставим кнопку по вертикали в центр */
-    left: 50%; /* Ставим кнопку по горизонтали в центр */
-    transform: translate(-50%, -50%); /* Центрирование относительно центра кнопки */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
 
