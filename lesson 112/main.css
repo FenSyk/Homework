@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box
+}
+
+.btn-open {
+    width: 300px;
+    height: 50px;
+    font-size: 20px; /* Исправлено: font-style на font-size */
+    cursor: pointer;
+    border-radius: 20px;
+    
+    /* Новые стили для центрирования */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Используем абсолютное позиционирование */
+    top: 50%; /* Ставим кнопку по вертикали в центр */
+    left: 50%; /* Ставим кнопку по горизонтали в центр */
+    transform: translate(-50%, -50%); /* Центрирование относительно центра кнопки */
+}
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000c1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal__window {
+    position: relative;
+    width: 50vw;
+    min-height: 40vh;
+    padding: 50px 20px 20px 20px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
