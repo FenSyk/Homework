@@ -94,17 +94,17 @@
     });
     // SLYDER - galereya
 
-    const swiper = new Swiper('.gallery__slider', {
+    new Swiper('.gallery__slider', {
         spaceBetween: 15,
         slidesPerView: 1.5,
 
-        
+
         pagination: {
             el: '.gallery__pagination',
             type: 'fraction'
         },
 
-        
+
         navigation: {
             nextEl: '.gallery__next',
             prevEl: '.gallery__prev',
@@ -122,6 +122,26 @@
             }
         }
 
+
     });
+    
+    // Слайдер-отзывы
+
+    new Swiper('.testimonirals__slider', {
+
+        spaceBetween: 66,
+        slidesPerView: 1,
+
+        navigation: {
+            nextEl: '.testimonials__next',
+            prevEl: '.testimonials__prev',
+        },
+
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+        },
+    });
+
 
 })();
