@@ -4,6 +4,8 @@
     --accent-color: #ffa55c;
     --accent-bg: #ffe0cb;
     --accent-text: #1f1711;
+    --accent-text-2:#ceaad0;
+    --input-color: #ac907a;
     --transition: all .4s;
     --border-radius: 20px;
 }
@@ -40,7 +42,8 @@
 }
 
 .main__program,
-.main__gallery {
+.main__gallery,
+.main__testimonials {
     padding-bottom: 145px;
 }
 
