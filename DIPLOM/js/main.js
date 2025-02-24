@@ -44,7 +44,7 @@ swiper.on('slideChange', updatePagination);
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.accordion-item');
 
     items.forEach(item => {
@@ -53,21 +53,42 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeBtn = item.querySelector('.close__acc');
         const openBtn = item.querySelector('.open__acc');
 
-        header.addEventListener('click', function() {
-            // Закрываем текущий элемент, если он уже открыт
+        header.addEventListener('click', function () {
+            // Если элемент открыт, закрываем
             if (content.classList.contains('active')) {
+                content.style.maxHeight = '0'; // Плавно закрываем с помощью max-height
+                content.style.opacity = '0'; // Плавное исчезновение
                 content.classList.remove('active');
                 closeBtn.style.display = 'inline-block';
                 openBtn.style.display = 'none';
             } else {
-                // Открываем текущий элемент
+                // Если элемент закрыт, открываем
+                content.style.maxHeight = content.scrollHeight + 'px'; // Устанавливаем максимальную высоту
+                content.style.opacity = '1'; // Плавно показываем
                 content.classList.add('active');
                 closeBtn.style.display = 'none';
                 openBtn.style.display = 'inline-block';
+
+                // После анимации устанавливаем max-height: none, чтобы он адаптировался
+                setTimeout(() => {
+                    content.style.maxHeight = 'none';
+                }, 300); // Время анимации
             }
         });
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -79,12 +100,12 @@ const body = document.body;
 
 // Открытие/закрытие по клику на бургер
 burger.addEventListener('click', () => {
-  nav.classList.toggle('active');
+    nav.classList.toggle('active');
 });
 
 // Закрытие по клику вне навигации
 body.addEventListener('click', (event) => {
-  if (!event.target.closest('.header__nav') && !event.target.closest('.burger')) {
-    nav.classList.remove('active');
-  }
+    if (!event.target.closest('.header__nav') && !event.target.closest('.burger')) {
+        nav.classList.remove('active');
+    }
 });
