@@ -748,11 +748,8 @@ input[type="checkbox"] {
     width: 100%;
 }
 
-
 .accord {
-    /* padding-top: 150px; */
     padding-bottom: 150px;
-
     background: #f8f8f8;
 }
 
@@ -782,7 +779,6 @@ input[type="checkbox"] {
     line-height: 150%;
     color: #111;
     border-top: 1px solid #ababab;
-
 }
 
 .accordion-content span {
@@ -807,30 +803,32 @@ input[type="checkbox"] {
     max-width: 900px;
 }
 
-
-
 .open__acc {
     display: none;
 }
-
 .accordion-content {
-    padding-bottom: 50px;
-    display: none;
+    max-height: 0; /* Начальная высота */
+    overflow: hidden;
+    opacity: 0; /* Скрытый контент */
+    transition: max-height .4s ease, opacity .4s ease; /* Анимация max-height и opacity */
 }
 
-.accordion-content.active {
-    display: block;
-}
 
 
 .accordion-item.active .close__acc {
     display: none;
-    /* Скрываем "+" при открытом аккордеоне */
 }
 
 .accordion-item.active .open__acc {
     display: inline-block;
-    /* Показываем "×" при открытом аккордеоне */
+}
+
+.accordion-item:not(.active) .close__acc {
+    display: inline-block;
+}
+
+.accordion-item:not(.active) .open__acc {
+    display: none;
 }
 
 .mobile__menu {

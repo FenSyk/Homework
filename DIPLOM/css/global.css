@@ -1,6 +1,7 @@
 :root {
     --font-family: "Open Sans", sans-serif;
     --second-family: "NAMU", sans-serif;
+    --transition: all .4s;
 }
 
 html {
